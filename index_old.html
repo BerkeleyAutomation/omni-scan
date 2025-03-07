@@ -1,0 +1,632 @@
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-VTKHNTKBM4"></script> -->
+    <!-- <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-VTKHNTKBM4');
+    </script> -->
+
+    <meta charset="utf-8" />
+    <title>Omni-Scan</title>
+
+    <!-- TODO double check these are updated -->
+    <!-- Website Metadata -->
+    <!-- <meta content="Hierarchical grouping in 3D by training a scale-conditioned affinity field from multi-level masks"
+        name="description" />
+    <meta content="Robot See Robot Do: Imitating Articulated Object Manipulation with Monocular 4D Reconstruction" property="og:title" />
+    <meta content="4D reconstruct moving object parts from a monocular video using a scanned object model and imitate part motion with a robot"
+        property="og:description" />
+    <meta content="http://robot-see-robot-do.github.io/data/preview_card.png" property="og:image" />
+    <meta content="Robot See Robot Do: Imitating Articulated Object Manipulation with Monocular 4D Reconstruction" property="twitter:title" />
+    <meta content="4D reconstruct moving object parts from a monocular video using a scanned object model and imitate part motion with a robot"
+        property="twitter:description" />
+    <meta content="http://robot-see-robot-do.github.io/data/preview_card.png" property="twitter:image" /> 
+    <meta property="og:type" content="website" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />  -->
+
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script
+        type="text/javascript">WebFont.load({ google: { families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Ubuntu:300,300italic,400,400italic,500,500italic,700,700italic", "Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic", "Changa One:400,400italic", "Varela Round:400", "Bungee Shade:regular", "Roboto:300,regular,500", "Bungee Outline:regular"] } });</script>
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
+
+    <!-- JQuery, scripts etc -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="script.js" type="text/javascript"></script>
+    <script src="js/carousel_utils.js" type="text/javascript"></script>
+
+    <!-- Stylesheets; tabler icons, fonts, ...-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <link href="data/favicon.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+
+<body>
+    <div>
+        <!-- Title, Subtitle, Authors -->
+        <div>
+            <h1 class="title">
+                Omni-Scan
+            </h1>
+            <h1 class="subheader">Creating Visually-Accurate Digital Twin Object Models <br> Using a Bimanual Robot with Handoff and Gaussian Splat Merging</h1>
+            <!-- Author list -->
+            <div class="base-row">
+                <!-- Refer to how author wrapping is performed in https://brentyi.github.io/tilted/ -->
+                <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+                    <div>
+                        <a href="https://berkeleyautomation.github.io/omni-scan/" target="_blank" class="author-text">
+                            Tianshuang Qiu*
+                        </a>
+                        <div style="width: 1.25em; display: inline-block"></div>
+                        <a href="https://berkeleyautomation.github.io/omni-scan/" target="_blank" class="author-text">
+                            Zehan Ma*
+                        </a>
+                        <div style="width: 1.25em; display: inline-block"></div>
+                        <a href="https://el-refai.github.io/" target="_blank" class="author-text">
+                            Karim El-Refai*
+                        </a>
+                        <div style="width: 1.25em; display: inline-block"></div>
+                        <a href="https://berkeleyautomation.github.io/omni-scan/" target="_blank" class="author-text">
+                            Hiya Shah
+                        </a>
+                        <div style="width: 1.25em; display: inline-block"></div>
+                        <a href="https://kerrj.github.io/" target="_blank" class="author-text">
+                            Justin Kerr
+                        </a>
+                        <div style="width: 1.25em; display: inline-block"></div>
+                        <a href="https://chungmin99.github.io/" target="_blank" class="author-text">
+                            Chung Min Kim
+                        </a>
+                        <div style="width: 1.25em; display: inline-block"></div>
+                        <a href="https://goldberg.berkeley.edu/" target="_blank" class="author-text">
+                            Ken Goldberg
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center">
+                <h1 id="uc-berkeley">UC Berkeley </h1>
+                <span class="text-star">*</span>
+                Denotes Equal Contribution
+            </div>
+        </div>
+        <!-- Submission status -->
+        <div class="title-row">
+            <h2 class="subheader">Under Review IROS 2025</h1>
+        </div>
+
+        <!-- Paper / code / data URLs -->
+        <!-- TODO: Update arxiv/code/data link -->
+        <div class="base-row add-top-padding">
+            <!-- Paper -->
+            <a href="https://arxiv.org/abs/2409.18121" target="_blank" class="link-block">
+                <figure>
+                    <img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01.png"
+                        alt="paper"
+                        srcset="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01-p-500.png"
+                        style="max-height: 4em" />
+                </figure>
+                <figcaption>
+                    <strong class="link-labels-text">Paper</strong>
+                </figcaption>
+            </a>
+            <!-- Code -->
+            <a href="https://github.com/kerrj/rsrd" target="_blank" class="link-block">
+                <figure>
+                    <img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cae3b53b42ebb3dd4175a82_68747470733a2f2f7777772e69636f6e66696e6465722e636f6d2f646174612f69636f6e732f6f637469636f6e732f313032342f6d61726b2d6769746875622d3235362e706e67.png"
+                        alt="code" style="max-height: 4em" />
+                </figure>
+                <figcaption>
+                    <strong class="link-labels-text">&lt;/Code&gt;</strong>
+                </figcaption>
+            </a>
+            <!-- Data -->
+            <a href="https://drive.google.com/drive/folders/154xLxd5-nvB25lS1FY_Dk-UhUxLebziu?usp=drive_link" target="_blank" class="link-block">
+                <figure>
+                    <img src="data/database_icon.jpg" alt="data" style="max-height: 4em" />
+                </figure>
+                <figcaption>
+                    <strong class="link-labels-text">Data</strong>
+                </figcaption>
+            </a>
+        </div>
+
+        <!-- TL;DR + Teaser video -->
+        <div class="section base-row add-top-padding">
+            <h1 class="tldr">
+                <b>TL;DR</b>:
+                Omni-Scan uses a bimanual robot to scan objects from multiple viewpoints, then hands off the object to the other arm getting views of previously points. It then merges the scans into a single, visually-accurate 3DGS model.
+            </h1>
+            <video id="main-video" autobuffer muted autoplay loop controls playsinline>
+                <source id="mp4" src="data/inhand IROS video v2 small.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="section base-row add-top-padding">
+            <h1 class="tldr">
+                Humans imitate manipulation by watching <b>object</b> motion, not <b>hand</b> motion. RSRD does the same. <br>
+                This enables imitation from a single video robust to orientation and across the human-robot embodiment gap.
+            </h1>
+            <img src="data/rsrd_mainfig.jpg" style="max-width: 100%" />
+        </div>
+
+        <div class="section add-top-padding">
+            <div class="base-row">
+                <img src="data/favicon.png" style="height: 40px; margin-left: 5px; margin-right: 5px; margin-top: 40px; margin-bottom: 40px;">
+                <img src="data/favicon.png" style="height: 40px; margin-left: 5px; margin-right: 5px; margin-top: 40px; margin-bottom: 40px;">
+                <img src="data/favicon.png" style="height: 40px; margin-left: 5px; margin-right: 5px; margin-top: 40px; margin-bottom: 40px;">
+            </div>
+        </div>
+
+        <div class="section base-row add-top-padding">
+            
+
+            <h1>4D Part Reconstruction</h1>
+            <p class="paragraph">
+                RSRD takes in <b>1) </b>a multi-view object scan and <b>2)</b> a monocular demonstration video.
+                By creating part-aware 3D representations using <a href="https://www.garfield.studio/" class="author-text" target="_blank">GARField</a> (parts, toggle for clusters) and 
+                <a href="https://github.com/facebookresearch/dinov2" class="author-text"target="_blank">DINOv2</a> (tracking SE3 pose),
+                these smartphone-captured inputs can generate these 4D reconstructions:
+            </p>
+            
+            
+            <div id="main-results">
+                <h1 class="tldr"><b>Input demonstration video</b></h1>
+            <div class="video-carousel-wrapper">
+                <div class="carousel-container" id="videoCarousel">
+                    <!-- Add your video elements here -->
+                    <div class="carousel-item" id="bear_video">
+                        <video autoplay muted loop playsinline height="400px">
+                            <source src="data/demo_vids/cal_bear_naked_wave.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item" id="nerfgun_video">
+                        <video autoplay muted loop playsinline height="400px">
+                            <source src="data/demo_vids/nerfgun_final.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item" id="redbox_video">
+                        <video autoplay muted loop playsinline height="400px">
+                            <source src="data/demo_vids/buddha_empty_close.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item" id="scissors_video">
+                        <video autoplay muted loop playsinline height="400px">
+                            <source src="data/demo_vids/scissors2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item" id="sunglasses_video">
+                        <video autoplay muted loop playsinline height="400px">
+                            <source src="data/demo_vids/sunglasses_fold.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item" id="ledlight_video">
+                        <video autoplay muted loop playsinline height="400px">
+                            <source src="data/demo_vids/led_light_unfold3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item" id="stapler_video">
+                        <video autoplay muted loop playsinline height="400px">
+                            <source src="data/demo_vids/stapler_fold.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item" id="wirecutters_video">
+                        <video autoplay muted loop playsinline height="400px">
+                            <source src="data/demo_vids/wire_cutters_close2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="carousel-item" id="usbplug_video">
+                        <video autoplay muted loop playsinline height="400px">
+                            <source src="data/demo_vids/usb_plug_unplug3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <!-- <h1 class="tldr"><b>
+                <img src="data/drag_icon.png" alt="" class="inline-image">Click and move me!<img src="data/drag_icon.png" alt="" class="inline-image">
+            </b></h1> -->
+            
+                <div id="iframe-container" class="iframe-container">
+                    <div class="click-and-move-overlay">
+                        <h1 class="tldr">
+                            <b>
+                                <img src="data/drag_icon.png" alt="" class="inline-image">
+                                Click and move me!
+                                <img src="data/drag_icon.png" alt="" class="inline-image">
+                            </b>
+                        </h1>
+                    </div>
+                    <iframe
+                        id="bear"
+                        class = "iframe"
+                        data-src="https://rsrd-anonymous.github.io/build/?playbackPath=https://rsrd-anonymous.github.io/recordings/bear_animation.viser&initDistanceScale=1.1&gaussianGroupColorShuffleSeed=1"
+                    ></iframe>
+                    <iframe
+                        id = "nerfgun"
+                        class = "iframe"
+                        data-src="https://rsrd-anonymous.github.io/build/?playbackPath=https://rsrd-anonymous.github.io/recordings/nerfgun_animation.viser&gaussianGroupColorShuffleSeed=3"
+                    ></iframe>
+                    <iframe
+                        id = "redbox"  
+                        class = "iframe"
+                        data-src="https://rsrd-anonymous.github.io/build/?playbackPath=https://rsrd-anonymous.github.io/recordings/red_box_animation.viser&gaussianGroupColorShuffleSeed=13"
+                    ></iframe>
+                    <iframe
+                        id = "scissors"  
+                        class = "iframe"
+                        data-src="https://rsrd-anonymous.github.io/build/?playbackPath=https://rsrd-anonymous.github.io/recordings/scissors_animation.viser&initDistanceScale=1.1&gaussianGroupColorShuffleSeed=4"
+                    ></iframe>
+                    <iframe
+                        id = "sunglasses"  
+                        class = "iframe"
+                        data-src="https://rsrd-anonymous.github.io/build/?playbackPath=https://rsrd-anonymous.github.io/recordings/sunglasses_animation.viser&initDistanceScale=1.2&gaussianGroupColorShuffleSeed=0"
+                    ></iframe>
+                    <iframe
+                        id="ledlight"
+                        class = "iframe"
+                        data-src="https://rsrd-anonymous.github.io/build/?playbackPath=https://rsrd-anonymous.github.io/recordings/led_light.viser&initDistanceScale=1.3&gaussianGroupColorShuffleSeed=5"
+                    ></iframe>
+                    <iframe
+                    id="stapler"
+                        class = "iframe"
+                        data-src="https://rsrd-anonymous.github.io/build/?playbackPath=https://rsrd-anonymous.github.io/recordings/stapler.viser&gaussianGroupColorShuffleSeed=4"
+                    ></iframe>
+                    <iframe
+                    id="usbplug"
+                        class = "iframe"
+                        data-src="https://rsrd-anonymous.github.io/build/?playbackPath=https://rsrd-anonymous.github.io/recordings/usb_plug.viser&gaussianGroupColorShuffleSeed=3"
+                    ></iframe>
+                    <iframe
+                    id="wirecutters"
+                        class = "iframe"
+                        data-src="https://rsrd-anonymous.github.io/build/?playbackPath=https://rsrd-anonymous.github.io/recordings/wirecutters.viser&initDistanceScale=1.4&gaussianGroupColorShuffleSeed=9"
+                    ></iframe>
+                </div>
+                <div style="position: relative; display: flex;">
+                    <button class="results-slide-arrow" id="results-slide-arrow-prev" onclick="results_slide_left()">
+                        &#8249;
+                    </button>
+                    <div class="results-slide-row" id="results-objs-scroll">
+                        <div data-img-src="data/thumbnails/bear_zoomed.jpg" data-id="bear-thumb" data-label="Bear"></div>
+                        <div data-img-src="data/thumbnails/nerfgun_zoomed.jpg" data-id="nerfgun-thumb" data-label="Nerfgun"></div>
+                        <div data-img-src="data/thumbnails/red_box_zoomed.jpg" data-id="redbox-thumb" data-label="Box"></div>
+                        <div data-img-src="data/thumbnails/scissors_zoomed.jpg" data-id="scissors-thumb" data-label="Scissors"></div>
+                        <div data-img-src="data/thumbnails/sunglasses_zoomed.jpg" data-id="sunglasses-thumb" data-label="Sunglasses"></div>
+                        <div data-img-src="data/thumbnails/led_light_zoomed.jpg" data-id="ledlight-thumb" data-label="LED Light"></div>
+                        <div data-img-src="data/thumbnails/stapler_zoomed.jpg" data-id="stapler-thumb" data-label="Stapler"></div>
+                        <div data-img-src="data/thumbnails/wirecutter_zoomed.jpg" data-id="wirecutters-thumb" data-label="Wirecutters"></div>
+                        <div data-img-src="data/thumbnails/usb_plug_zoomed.jpg" data-id="usbplug-thumb" data-label="USB Plug"></div>
+                    </div>
+                    <button class="results-slide-arrow" id="results-slide-arrow-next" onclick="results_slide_right()">
+                        &#8250;
+                    </button>
+                </div>
+            </div> 
+            <p class="tldr">These 4D reconstructions are rendered in-browser! If you think that's cool, check out <a href="https://viser.studio/latest/" class="author-text" target="_blank">Viser</a>!</p>
+            
+        </div>
+
+        <div class="section add-top-padding">
+            <div class="base-row">
+                <img src="data/favicon.png" style="height: 40px; margin-left: 5px; margin-right: 5px; margin-top: 40px; margin-bottom: 40px;">
+                <img src="data/favicon.png" style="height: 40px; margin-left: 5px; margin-right: 5px; margin-top: 40px; margin-bottom: 40px;">
+                <img src="data/favicon.png" style="height: 40px; margin-left: 5px; margin-right: 5px; margin-top: 40px; margin-bottom: 40px;">
+            </div>
+        </div>
+
+        <div class="section base-row add-top-padding">
+            <h1>Robot Motion Retargeting</h1>
+            <p class="paragraph">
+                After recovering 3D part motion, RSRD optimizes grasps and robot motions to reproduce the 4D reconstructions.
+            </p>
+
+            <div id="iframe-container" class="iframe-container">
+                <div class="click-and-move-overlay">
+                    <h1 class="tldr">
+                        <b>
+                            <img src="data/drag_icon.png" alt="" class="inline-image">
+                            Click and move me!
+                            <img src="data/drag_icon.png" alt="" class="inline-image">
+                        </b>
+                    </h1>
+                </div>
+                <iframe class="iframe show"
+                    src="https://rsrd-anonymous.github.io/build/?playbackPath=https://rsrd-anonymous.github.io/recordings/robot_bear.viser&initDistanceScale=1.5&gaussianGroupColorShuffleSeed=1"
+                ></iframe>
+            </div>
+            <p class="paragraph">
+                These can be physically executed on a real robot to produce the demonstrated motion:
+            </p>
+            <div style="position: relative; display: flex;">
+                <button class="results-slide-arrow" id="results-slide-arrow-prev" onclick="vid_slide_left()">
+                    &#8249;
+                </button>
+                <div class="video-scroll" id="result-video-scroll">
+                    <div class="video-scroll-card">
+                        <video autoplay muted loop playsinline>
+                            <source src="data/bear_robot_1_trimmed.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-scroll-card">
+                        <video autoplay muted loop playsinline>
+                            <source src="data/nerfgun_robot_1_trimmed.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-scroll-card">
+                        <video autoplay muted loop playsinline>
+                            <source src="data/scissors_white_out.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-scroll-card">
+                        <video autoplay muted loop playsinline>
+                            <source src="data/scissors_red_out.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-scroll-card">
+                        <video autoplay muted loop playsinline>
+                            <source src="data/red_box_out.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-scroll-card">
+                        <video autoplay muted loop playsinline>
+                            <source src="data/sunglasses_out.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <button class="results-slide-arrow" id="results-slide-arrow-next" onclick="vid_slide_right()">
+                    &#8250;
+                </button>
+            </div>
+            <p class="paragraph">
+                RSRD's visual imitation is <b>object-centric</b>, allowing it to adapt to <em>different</em> object orientations with the <em>same</em> demo:
+                <div class="video-container">
+                    <div class="video-item">
+                        <p><b>0 degrees rotated</b></p>
+                        <video autoplay muted loop playsinline>
+                            <source src="data/bear_robot_2_trimmed.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-item">
+                        <p><b>180 degrees rotated</b></p>
+                        <video autoplay muted loop playsinline>
+                            <source src="data/bear_robot_1_trimmed.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="video-item">
+                        <p><b>0 degrees rotated</b></p>
+                        <video autoplay muted loop playsinline>
+                            <source src="data/nerfgun_straight_out.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-item">
+                        <p><b>30 degrees rotated</b></p>
+                        <video autoplay muted loop playsinline>
+                            <source src="data/nerfgun_half_turned_out.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-item">
+                        <p><b>45 degrees rotated</b></p>
+                        <video autoplay muted loop playsinline>
+                            <source src="data/nerfgun_robot_2_trimmed.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </p>
+        </div>
+
+        <!-- Just for vertical spacing... -->
+        <div class="section add-top-padding">
+            <div class="base-row">
+                <img src="data/favicon.png" style="height: 40px; margin-left: 5px; margin-right: 5px; margin-top: 40px; margin-bottom: 40px;">
+                <img src="data/favicon.png" style="height: 40px; margin-left: 5px; margin-right: 5px; margin-top: 40px; margin-bottom: 40px;">
+                <img src="data/favicon.png" style="height: 40px; margin-left: 5px; margin-right: 5px; margin-top: 40px; margin-bottom: 40px;">
+            </div>
+        </div>
+         </div>
+         <div class="section base-row add-top-padding">
+            <h1>How it works</h1>
+            <div class="separator"></div>
+            <p class="tldr"><b>4D Differentiable Part Models</b></p>
+            <p class="paragraph">
+                4D-DPM decomposes objects into parts with <a href="https://www.garfield.studio/" class="author-text" target="_blank">GARField</a>, and trains part-centric feature fields
+                on top of these. Each part is assigned a trainable 6D pose parameter which is optimized with gradient descent.
+                DINO improves dramatically over photometric tracking as a more robust feature target, and allows reconstructing a broad range of open-world objects.
+            </p>
+            <img src="data/4ddpm_fig.jpg" style="max-width: 100%; padding-bottom: 30px" />
+            <p class="paragraph">
+                Because 4D-DPM uses gradient descent, any differentiable prior is easily incorporated like temporal smoothness and rigidity.
+            </p>
+            <img src="data/4ddpm_ablation.jpg" style="max-width: 90%" />
+         </div>
+
+        <div class="section base-row add-top-padding">
+            <h1>Retargeting Robot Trajectory</h1>
+            <p class="paragraph">
+                With the recovered 3D part motion and the object placed in the robot workspace,
+                RSRD now can <i>do</i> the motion demonstrated in the video.
+                Motions can be retargeted regardless of object pose!
+                Three main takeaways are:
+                <ol class="paragraph">
+                    <li>
+                        <b>Hand-Guided Part Selection</b>:
+                        From the 4D motion reconstruction, RSRD must automatically detect which parts need to be manipulated to reproduce it.
+                        Not all moving parts are relevant, like the wooden figurine's hand.
+                        We use hand position as prior for part selection (using <a class="author-text" href="https://geopavlakos.github.io/hamer/">HaMeR</a>),
+                        but <i>do not</i> use the hand contact points, as explained in (2).
+                        <img src="data/rsrd_hands.jpg" style="max-width: 90%" />
+                    </li><br>
+                    <li>
+                        <b>Part-centric Grasps</b>: 
+                        We cannot use detected finger contact locations as grasp points, as they may either jitter or become kinematically unreachable.
+                        Also, a robot must remain rigidly attached to the object part during the entire motion, whileas
+                        humans can do so much more &mdash; change contact points by shuffling fingers, or do prehensile motions.
+                        <div class="video-container" style="max-width: 600px;">
+                            <div class="video-item">
+                                <video autoplay muted loop playsinline>
+                                    <source src="data/nerfgun_graspsearch.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </li><br>
+                    <li>
+                        <b>Bimanual Robot Pose Optimization</b>:
+                        We exhaustively search for collision-free, kinematically feasible robot trajectories: we first use
+                        <a href="https://github.com/brentyi/jaxls" class="author-text" target="_blank">jaxls</a>
+                        to optimize a robot trajectory to fit the robot end-effector waypoints using a Levenberg-Marquardt solver.
+                        Then, we use
+                        <a href="https://curobo.org/" class="author-text" target="_blank">cuRobo</a>
+                        to plan collision-free robot approach motions and for all collision avoidance checks.
+                        <br>
+                        Below we vary the object pose, and visualize below some bimanual IK solutions for each object motion.
+                        <div class="video-container">
+                            <div class="video-item">
+                                <video autoplay muted loop playsinline>
+                                    <source src="data/nerfgun_posevary.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="video-item">
+                                <video autoplay muted loop playsinline>
+                                    <source src="data/bear_posevary.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="video-item">
+                                <video autoplay muted loop playsinline>
+                                    <source src="data/scissors_posevary.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </p>
+            </div>
+            <!-- Just for vertical spacing... -->
+        <div class="section add-top-padding">
+            <div class="base-row">
+                <img src="data/favicon.png" style="height: 40px; margin-left: 5px; margin-right: 5px; margin-top: 40px; margin-bottom: 40px;">
+                <img src="data/favicon.png" style="height: 40px; margin-left: 5px; margin-right: 5px; margin-top: 40px; margin-bottom: 40px;">
+                <img src="data/favicon.png" style="height: 40px; margin-left: 5px; margin-right: 5px; margin-top: 40px; margin-bottom: 40px;">
+            </div>
+        </div>
+        <div class="section base-row add-top-padding">
+            <h1>Limitations and Failures</h1>
+            <p class="paragraph">
+                4D monocular reconstruction is an extremely under-constrained and challenging problem, and 4D-DPM still suffers from sensitivity to demonstration viewpoint, occlusions, reconstruction quality, and more.
+                It also requires some hyper-parameter tuning of regularizers like the ARAP loss, and can frustratingly fail due to incorrect or incomplete part segmentations. More work is needed to adapt the approach for more in-the-wild videos.
+                In addition, while we show how the 4D reconstruction enables a robot to imitate with motion planning, RSRD as designed cannot scale to multiple demonstration videos of the same object, it can only mimick motion from one video. 
+                Learning to manipulate from more demonstrations, perhaps with policy learning, is an exciting future direction!
+            </p>
+            <p class="paragraph">
+                <b>Camera Angle Sensitivity:</b> Since RSRD uses only a single video, it can be sensitive to camera pose during the demonstration, as illustrated in the tracking failure below. 
+                The same scan of the laptop can work or fail depending on the camera angle.
+            </p>
+            <div class="video-container">
+                <div class="video-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="data/laptop_trackfail.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="data/laptop_tracksucc.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <p class="paragraph">
+                <b>Difficulty with feature-less parts:</b> 4D-DPM can struggle with parts which look similar from multiple angles, or have
+                not enough visual features for DINO to pick up on. In these videos the tail of the plushie and cable of the charger rotate along their major axis, making robot
+                execution difficult.
+            </p>
+                <div class="video-container">
+                    <div class="video-item">
+                        <video autoplay muted loop playsinline>
+                            <source src="data/garfield_tailrotate.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-item">
+                        <video autoplay muted loop playsinline>
+                            <source src="data/mac_charger_cablerotate.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            <p class="paragraph">
+                <b>Poor segmentation or reconstruction</b>: If the object scan is poor, or the part segmentation is incomplete or severely over-segmented,
+                4D-DPM can be unstable and lead to catastrophic failure like below. 
+            </p>
+            <div class="video-container">
+                <div class="video-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="data/mac_charger_catastrophic.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <p class="paragraph">
+                <b>Hand occlusions</b>: hand occlusions can interfere with part motion recovery, such as with the leg of this sculpture
+            </p>
+            <div class="video-container">
+                <div class="video-item">
+                    <video autoplay muted loop playsinline>
+                        <source src="data/hand_occ.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="section citation" style="margin-top: 50px">
+            <h1 id="abstract">Citation </h1>
+            <p class="paragraph"> If you use this work or find it helpful, please consider citing: (bibtex) </p>
+            <pre id="codecell0">@inproceedings{kerr2024rsrd,
+            &nbsp;title={Robot See Robot Do: Imitating Articulated Object Manipulation with Monocular 4D Reconstruction},
+            &nbsp;author={Justin Kerr and Chung Min Kim and Mingxuan Wu and Brent Yi and Qianqian Wang and Ken Goldberg and Angjoo Kanazawa},
+            &nbsp;booktitle={8th Annual Conference on Robot Learning},
+            &nbsp;year={2024},
+            &nbsp;url={https://openreview.net/forum?id=2LLu3gavF1}
+            }
+            </pre>
+        </div> -->
+        <footer>
+            <div class="section" style="margin-top: 40px;">
+                <p class="paragraph">
+                    The website template is adapted from the <a class="author-text" href="https://www.garfield.studio">GARField</a> and <a class="author-text" href="https://robot-see-robot-do.github.io/">Robot See Robot Do</a>
+                    project page.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+</body>
