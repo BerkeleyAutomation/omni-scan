@@ -122,6 +122,46 @@
             </video>
         </div>
 
+        <div id="iframe-container" class="iframe-container">
+            <div class="click-and-move-overlay">
+                <h1 class="tldr">
+                    <b>
+                        <img src="data/drag_icon.png" alt="" class="inline-image">
+                        Click and move me!
+                        <img src="data/drag_icon.png" alt="" class="inline-image">
+                    </b>
+                </h1>
+            </div>
+            <iframe
+                id="allen"
+                class = "iframe"
+                data-src="https://berkeleyautomation.github.io/omni-scan/viser-client/?playbackPath=https://berkeleyautomation.github.io/omni-scan/recordings/big_allen.viser"
+            ></iframe>
+            <iframe
+                id="allendasds2"
+                class = "iframe"
+                data-src="https://berkeleyautomation.github.io/omni-scan/viser-client/?playbackPath=https://berkeleyautomation.github.io/omni-scan/recordings/big_allen2.viser"
+            ></iframe>
+            <iframe
+                id="bear"
+                class = "iframe"
+                data-src="https://berkeleyautomation.github.io/omni-scan/viser-client/?playbackPath=https://berkeleyautomation.github.io/omni-scan/recordings/logitech_good.viser"
+            ></iframe>
+        </div>
+        <div style="position: relative; display: flex;">
+            <button class="results-slide-arrow" id="results-slide-arrow-prev" onclick="results_slide_left()">
+                &#8249;
+            </button>
+            <div class="results-slide-row" id="results-objs-scroll">
+                <div data-id="allen-thumb" data-label="Allen"></div>
+                <!-- <div data-img-src="data/thumbnails/allen2.png" data-id="allen-thumb" data-label="Allen"></div> -->
+                <div data-img-src="data_old/drag_icon" data-id="logitech_good-thumb" data-label="Logitech BRIO"></div>
+                <div data-img-src="data/thumbnails/logitech_good.png" data-id="logitech_good-thumb" data-label="Logitech BRIO"></div>
+            </div>
+            <button class="results-slide-arrow" id="results-slide-arrow-next" onclick="results_slide_right()">
+                &#8250;
+            </button>
+        </div>
         
         <footer>
             <div class="section" style="margin-top: 40px;">
