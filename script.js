@@ -25,13 +25,13 @@ $(() => {
 
 // Array of iframe IDs (must match the HTML)
 const iframeIds = [
-  'allen', 'esp', 'expo', 'flashlight_bad_geo',
+  'wireplug_good', 'allen', 'esp', 'expo', 'flashlight_bad_geo',
   'flashlight_good', 'flashlight_good2', 'garden_stake', 'icecream',
   'l_bracket', 'logitech_good', 'logitech2', 'postcard', 'pressure_sensor',
   'realsense_good', 'realsense2', 'sperry', 'tube_strap', 'wine_opener',
   'remote_left', 'remote_right', 'remote_merge', 't_connector_bad_vis',
   't_connector_good', 't_connector_good2', 'wireplug_bad_geo',
-  'wireplug_good', 'wireplug_good2'
+ 'wireplug_good2'
 ];
 
 let currentThumbnail = 0;
